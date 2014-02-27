@@ -12,14 +12,14 @@ c_notpl(N) :-
 
 /* list of professors teaching 60 */
 c_inst60(L) :-
-	course(60,pl,L)
+	course(60,pl,L).
 
 /* sorted list of professors teaching 60 */
 c_inst60_sorted(L) :-
 	
 /* list of professors teaching 20 */
 c_inst20(L) :-
-	course(20,pl,L)
+	course(20,pl,L).
 
 /* sorted list of professors teaching 20 */
 c_inst20_sorted(L) :-
@@ -33,7 +33,7 @@ c_single_inst(N) :-
 
 /* number of courses with more than one instructor */
 c_multi_inst(N)  :- 
-    course(N,_,[_|[_|_]])
+    course(N,_,[_|[_|_]]).
 
 /* numbers of courses for which I is the only instructor */
 c_exclusive(I,N) :-
