@@ -3,8 +3,8 @@ c_numbers(N) :-
         course(Name,_,_).
  
 /* numbers of all computer programming language courses */
-c_pl(N) :-
-        course(Name, pl, _).
+c_pl(N) :- 
+	course(N, programming_languages,_). 
  
 /* numbers of all non-computer programming language courses */
 c_notpl(N) :-
