@@ -27,7 +27,7 @@ c_inst20_sorted(L) :-
         sort(20,pl,L).
  
 /* sorted list of professors teaching N */
-(c_inst_sorted(N,L) :-
+c_inst_sorted(N,L) :-
         sort(N,pl,L).
  
 /* number of courses with exactly one instructor */
@@ -36,7 +36,7 @@ c_single_inst(N) :-
  
 /* number of courses with more than one instructor */
 c_multi_inst(N)  :-
-    course(N,_,[_|[_|_]])
+    course(N,_,[_|[_|_]]).
  
 /* numbers of courses for which I is the only instructor */
 c_exclusive(I,N) :-
