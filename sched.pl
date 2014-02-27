@@ -1,6 +1,6 @@
 /* all course names */
 c_numbers(N) :-
-        course(Name,_,_).
+	course(N,_,_).
  
 /* numbers of all computer programming language courses */
 c_pl(N) :- 
