@@ -43,7 +43,7 @@ c_exclusive(I,N) :-
 /* part 2 */
 
 sortappend(List1, List2, AppendList) :-
-  List1 > List 2 %if no more elements
+  List1 > List2 %if no more elements
     ->   AppendList = []   %then return empty list
     ;   First == Last   %else if reached the last element
         ->   AppendList = [List1]  %then return the last element
