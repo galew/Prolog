@@ -49,17 +49,10 @@ c_exclusive(I,N) :-
 
 /* part 2 */
  
-/*sortappend(List1, List2, AppendList) :-
-  List1 > List 2 %if no more elements
-    ->   AppendList = []   %then return empty list
-    ;   First == Last   %else if reached the last element
-        ->   AppendList = [List1]  %then return the last element
-        ;   Next is List1+1 %else continue iterating            
-        ,   sortappend(Next,Last,Tail)   %recurse on the tail
-        ,   AppendList = [First|Tail] %return appended list
-*/
+
+
 
 sortappend(List1, List2, AppendList) :-
-append(List1, List2, Appendlist)
-sort(Appendlist)
+append(List1, List2, Appendlist).
+sort(Appendlist).
 
