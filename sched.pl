@@ -53,6 +53,6 @@ delete_question("string_answer").
 
 
 
-sortappend(List1,List2,AppendList) :-
-	append(List1,List2,Appendlist).
-	sort(Appendlist).
+sortappend([List1],[List2],[SortAppendList]) :-
+	append([List1],[List2],[Appendlist]).
+	sort([Appendlist],[SortAppendList]).
