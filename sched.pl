@@ -43,7 +43,9 @@ c_multi_inst(N)  :-
     course(N,_,I).
  
 /* numbers of courses with exactly one or exactly two instructors */
+(c_12_inst_1or) :-
 
+(c_12_inst_2wo) :-
 
 
 
