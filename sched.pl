@@ -58,3 +58,11 @@ delete_question("string_answer").
 sortappend([List1],[List2],SortAppendList) :-
 	append([List1],[List2],[Appendlist]).
 	sort([Appendlist],SortAppendList).
+
+/* part 3 */
+
+distribute(W,[H],Y) :-
+    append(W,H,Y).
+distribute(W,[H|T],Y) :-
+    distribute[W,T,Y1],
+    append(Y,Y1,Y).
