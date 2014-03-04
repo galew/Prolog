@@ -88,7 +88,8 @@ crossmyfor(R,H,Z) :-
 
 
 /* part 5a */
-getallmeetings(C,Z) :-
+getallmeetings(C,Z) :- 
+    Z=sort(C);
 
 /* part 5b */ 
 participants(C,Z) :-
