@@ -68,3 +68,33 @@ distribute(W,[H],Y) :-
 distribute(W,[H|T],Y) :-
     distribute[W,T,Y1],
     append(Y,Y1,Y).
+
+/* part 4 */
+
+crossmyfor(R,H,Z) :-
+    /* break into two rules */
+    /* one generates two lists*/
+    /* other rule crosses the lists */
+
+    /* for the rule that crosses them: */
+    /*  takes the head of the first list it's */
+    /* given and calls distribute with that element */
+    /* and the second list, and then a base case for */
+    /* when the second list is empty tells it when to stop */
+
+
+/* part 5 */
+
+
+
+/* part 5a */
+getallmeetings(C,Z) :-
+
+/* part 5b */ 
+participants(C,Z) :-
+
+/* part 5c */
+osched(MR,MH,C,Z) :-
+
+/* part 5d */
+xsched(MR, MH, C, Z) :-
