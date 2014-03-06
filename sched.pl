@@ -63,9 +63,13 @@ delete_question("string_answer").
 
 /* This follows the delete behavior on page 157 */
 
-sortappend([List1],[List2],SortAppendList) :-
-	append([List1],[List2],[Appendlist]),
-	sort([Appendlist],SortAppendList).
+sortappend([], [], []).
+sortappend([H1|T1], B, Z) :-
+   sortappend(T1, [], Y1),
+   sortappend(B, [], Y2),
+   append(Y1, Y2, Y),
+   sort([H1 | Y], Z).
+
 
 /* part 3 */
 
