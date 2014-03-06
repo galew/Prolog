@@ -55,7 +55,7 @@ c_12_inst_2wo(N):-
  
 delete_question("string_answer").
 
-
+/* This follows the delete behavior on page 157 */
 
 sortappend([List1],[List2],SortAppendList) :-
 	append([List1],[List2],[Appendlist]).
@@ -71,16 +71,38 @@ distribute(W,[H|T],Y) :-
 
 /* part 4 */
 
-crossmyfor(R,H,Z) :-
-    /* break into two rules */
-    /* one generates two lists*/
-    /* other rule crosses the lists */
 
-    /* for the rule that crosses them: */
-    /*  takes the head of the first list it's */
-    /* given and calls distribute with that element */
-    /* and the second list, and then a base case for */
-    /* when the second list is empty tells it when to stop */
+/* myfor(L,U,Result) */
+
+
+myfor(L,U,Result) :-
+    L =< U,
+    L1 is L+1,
+    myfor(L1,U,Res1),
+    Result = [L | Res1].
+
+myfor(L,U,[]) :-
+    L>U.
+
+
+crossmyfor(R,H,Z) :- 
+    myfor(1,R,A),
+    myfor(1,H,B).
+  
+
+rule1([],_,[]).
+
+rule1([A|D],B,C) :-
+    distribute(A,B,Result),
+    rule1(D,B,Result2),
+    append(Result,Result2,C).
+
+
+
+
+   
+
+
 
 
 /* part 5 */
