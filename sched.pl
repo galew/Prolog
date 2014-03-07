@@ -59,7 +59,7 @@ c_12_inst_2wo(N):-
 
 /* part 2 */
  
-delete_question("string_answer").
+delete_question("p. 157").
 
 /* This follows the delete behavior on page 157 */
 
