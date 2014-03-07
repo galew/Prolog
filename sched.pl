@@ -73,11 +73,12 @@ sortappend([H1|T1], B, Z) :-
 
 /* part 3 */
 
-distribute(W,[H],Y) :-
-    append(W,H,Y).
+distribute(W,[],Y) :-
+    Y = [W].
 distribute(W,[H|T],Y) :-
-    distribute(W,T,Y1),
-    append(Y,Y1,Y).
+    distribute(W,T,Z),
+    Y = [[W,H]|Z].
+
 
 /* part 4 */
 
