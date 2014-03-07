@@ -95,17 +95,15 @@ myfor(L,U,[]) :-
     L>U.
 
 
-crossmyfor(R,H,Z) :- 
-    myfor(1,R,A),
-    myfor(1,H,B).
-  
-
-rule1([],_,[]).
-
-rule1([A|D],B,C) :-
-    distribute(A,B,Result),
-    rule1(D,B,Result2),
-    append(Result,Result2,C).
+crossmyfor(0,H,[]). 
+crossmyfor(R,H,Z) :-
+        myfor(1,R,X), 
+        myfor(1,H,Y),  
+        last(X,V), 
+        K is V-1, 
+        distribute(V, Y, W), 
+        crossmyfor(K,H,Q), 
+        append(Q,W,Z).
 
 
 /* part 5 */
@@ -113,11 +111,40 @@ rule1([A|D],B,C) :-
 
 
 /* part 5a */
-%getallmeetings(C,Z) :- 
- %  flatten(C,R),
+getallmeetings([],[]).
+
+getallmeetings(C,Z) :-
+        C = [H|T], 
+        H = [_|[W|_]], 
+        getallmeetings(T, U), 
+        append(W, U, V), 
+        sort(V, Z).
 
 /* part 5b */ 
-% participants(C,Z).
+
+
+distributeNew(_,[],[]).
+
+distributeNew(W,[H|T],Y) :-
+        append([H],[W],G), 
+        distributeNew(W,T,V), 
+        append([G],V,Y).
+
+
+participants([],[]).
+participants(C,Z) :-
+        C = [H|T],
+         H = [Name|[MeetingList|_]], 
+         makelist(MeetingList, Mlist),
+         distributeNew([Name],Mlist,G), 
+         participants(T,U), 
+         append(G,U,Z).
+
+
+
+makelist([],[]).
+makelist([H|T],Z) :-
+    makelist(T,U), append([H],U,Z).
 
 /* part 5c */
 % osched(MR,MH,C,Z).
