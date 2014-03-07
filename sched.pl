@@ -74,7 +74,7 @@ sortappend([H1|T1], B, Z) :-
 /* part 3 */
 
 distribute(W,[],Y) :-
-    Y = [W].
+    Y = [].
 distribute(W,[H|T],Y) :-
     distribute(W,T,Z),
     Y = [[W,H]|Z].
